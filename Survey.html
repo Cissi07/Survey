@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Akane's Survey Form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1 id="title">Akane's Survey Form</h1>
+    <p id="description">Please fill in the survey</p>
+    <form id="survey-form">
+      <label for="name" id="name-label">Name: 
+        <input required id="name" type="text" placeholder="Enter your name"/>
+      </label>
+      <label for="email" id="email-label">Email: 
+        <input required id="email" type="email" placeholder="Enter your Email (Optional)"/>
+      </label>
+      <label for="number" id="number-label">Age: 
+        <input id="number" type="number" min="10" max="120" placeholder="Age (optional)"/>
+      </label>
+      <fieldset>
+        <legend>How will you describe Akane?(Select all that applies)</legend>
+        <label for="cute"><input class="inline" id="cute" type="checkbox" value="cute" />Cute</label>
+        <label for="Gorgeous"><input class="inline" id="gorgeous" type="checkbox" value="gorgeous" />Gorgeous</label>
+        <label for="genius"><input class="inline" id="genius" type="checkbox" value="genius" />Genius</label>
+        <label for="dumb"><input class="inline" id="dumb" type="checkbox" value="dumb"/>Dumb-dumb</label>
+      </fieldset>
+      <fieldset>
+        <label for="dropdown">What do you want for dinner?
+          <select id="dropdown">
+            <option value="">(Select one)</option>
+            <option value="1">Harrods</option>
+            <option value="2">Delivery</option>
+            <option value="3">Shin-ramen</option>
+          </select>
+        </label>
+      </fieldset>
+      <button type="submit" id="submit">Submit</button>
+    </form>
+
+    <script>
+      document.getElementById("survey-form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Capture the form data
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const age = document.getElementById("number").value;
+        const description = [];
+        if (document.getElementById("cute").checked) description.push("Cute");
+        if (document.getElementById("gorgeous").checked) description.push("Gorgeous");
+        if (document.getElementById("genius").checked) description.push("Genius");
+        if (document.getElementById("dumb").checked) description.push("Dumb-dumb");
+        const dinnerChoice = document.getElementById("dropdown").value;
+
+        // Save the data to localStorage
+        const formData = { name, email, age, description, dinnerChoice };
+        localStorage.setItem("surveyResponses", JSON.stringify(formData));
+
+        // Alert user that data is saved
+        alert("Your responses have been saved!");
+      });
+    </script>
+  </body>
+</html>

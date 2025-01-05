@@ -1,0 +1,83 @@
+body{
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url(https://www.emp.co.uk/dw/image/v2/BBQV_PRD/on/demandware.static/-/Sites-master-emp/default/dwf31e911f/images/4/9/4/2/494203.jpg?sfrm=png);
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto;
+  width: 80%;
+  font-family:Times, serif;
+}
+h1,p{
+  color: #f5f6f7;
+  text-align:center;
+  font-family: Times, serif;
+  margin: 0.5em auto;
+  padding-top:-10px;
+}
+p{
+  font-style: italic;
+  padding-bottom: 10px;
+  font-size:18px;
+}
+form{
+  background-color: hsla(330, 17%, 20%, 0.8);
+  margin:0 auto;
+  width: 60vw;
+  max-width: 500px;
+  min-width:300px;
+  padding:1em;
+  padding-bottom:2em;
+}
+::placeholder {
+  color: black;
+  opacity: 0.5;
+}
+fieldset{
+  color: white;
+  border:none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+}
+fieldset:last-of-type{
+  border-bottom:none;
+  padding-bottom:30px;
+}
+
+label{
+  display: block;
+  margin: 0.5rem 0;
+}
+legend{
+  padding-top:10px;
+}
+input,
+textarea,
+select {
+  margin: 5px 0 0 0;
+  width: 100%;
+  min-height: 2em;
+}
+input, textarea{
+  background-color: rgba(255, 255, 255, 0.8);
+  border:rgba(255, 255, 255, 0.8);
+  color: black;
+}
+.inline{
+  display:inline;
+  width:unset;
+  margin:0 0.5em 0 0;
+  vertical-align:middle;
+}
+button{
+  display:block;
+  margin:1em auto;
+  height:1.5em;
+  width:50%;
+  background-color:rgba(200, 180, 190, 0.6);
+  border:1px;
+  border:2px solid white;
+  min-width:250px;
+  font-size:1rem;
+  color:white;
+}
+button:hover{
+  color:hsl(300, 17%, 20%);
+}
